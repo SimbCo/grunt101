@@ -9,20 +9,26 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          'css/styles.css': 'styl/*.styl'
+          'css/styles.css': 'app/styles/*.styl'
         }
       }
     },
     coffee: {
       compile: {
         files: {
-          'js/app.js': 'scripts/*.coffee'
+          'js/app.js': 'app/scripts/*.coffee'
         }
+      }
+    },
+    concat: {
+       dist: {
+        src: ['vendors/scripts/jquery.js'],
+        dest: 'js/vendor.js'
       }
     },
     watch: {
       src: {
-        files: ['styl/*.styl', 'scripts/*.coffee'],
+        files: ['app/styl/*.styl', 'app/scripts/*.coffee, vendors/scripts/*.js, vendors/styles/*.css'],
         tasks: ['default']
       }
     }
@@ -32,8 +38,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Default task(s).
-  grunt.registerTask('default', ['stylus','coffee']);
+  grunt.registerTask('default', ['stylus','coffee','concat']);
 
 };
