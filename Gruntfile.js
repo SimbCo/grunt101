@@ -9,21 +9,25 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          'css/styles.css': 'app/styles/*.styl'
+          'target/css/styles.css': 'app/styles/*.styl'
         }
       }
     },
     coffee: {
       compile: {
         files: {
-          'js/app.js': 'app/scripts/*.coffee'
+          'target/js/app.js': 'app/scripts/*.coffee'
         }
       }
     },
     concat: {
       dist: {
-        src: ['vendors/scripts/jquery.js'],
-        dest: 'js/vendor.js'
+        src: ['vendor/scripts/*.js'],
+        dest: 'target/js/vendor.js'
+      },
+      extras: {
+        src: ['vendor/styles/*.css'],
+        dest: 'target/css/vendor.css'
       }
     },
     watch: {
