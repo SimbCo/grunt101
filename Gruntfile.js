@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     },
     watch: {
       src: {
-        files: ['app/styl/*.styl', 'app/scripts/*.coffee, vendor/scripts/*.js, vendor/styles/*.css'],
+        files: ['app/styl/*.styl', 'app/scripts/*.coffee', 'vendor/scripts/*.js', 'vendor/styles/*.css'],
         tasks: ['default']
       }
     }
