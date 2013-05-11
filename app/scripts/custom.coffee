@@ -1,3 +1,1 @@
-$('button').click(=>
-	alert 'boop'
-)
+# Start writing Coffeescript

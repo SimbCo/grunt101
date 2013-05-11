@@ -21,7 +21,7 @@ module.exports = function(grunt) {
       }
     },
     concat: {
-       dist: {
+      dist: {
         src: ['vendors/scripts/jquery.js'],
         dest: 'js/vendor.js'
       }
