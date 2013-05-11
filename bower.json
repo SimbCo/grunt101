@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "jquery": "~1.9.1",
-    "backbone": "~1.0.0"
+    "backbone": "~1.0.0",
+    "bootstrap": "~2.3.1"
   },
   "ignore": [
     "**/.*",
