@@ -30,6 +30,13 @@ module.exports = function(grunt) {
         dest: 'target/css/vendor.css'
       }
     },
+    copy: {
+      main: {
+        files: [
+          {expand: true, cwd: 'app/static/', src: ['**'], dest: 'target/', filter: 'isFile'}
+        ]
+      }
+    },
     watch: {
       src: {
         files: ['app/styl/*.styl', 'app/scripts/*.coffee, vendor/scripts/*.js, vendor/styles/*.css'],
@@ -43,8 +50,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
-  grunt.registerTask('default', ['stylus','coffee','concat']);
+  grunt.registerTask('default', ['stylus','coffee','concat', 'copy']);
 
 };
