@@ -1,0 +1,13 @@
+{
+  "name": "grunt101",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "backbone": "~1.0.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
