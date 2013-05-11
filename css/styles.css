@@ -1,0 +1,5 @@
+body{background:#f00;-webkit-border-radius:5px;border-radius:5px}
+section{color:#008000;}
+section:hover{color:#f00}
+section .active{color:#00f;-webkit-box-shadow:1px;box-shadow:1px}
+article{border:1px solid #ddd;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover}
