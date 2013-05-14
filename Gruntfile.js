@@ -37,6 +37,15 @@ module.exports = function(grunt) {
         ]
       }
     },
+    connect: {
+      server: {
+        options: {
+          port: 3333,
+          base: 'target',
+          keepalive: false
+        }
+      }
+    },
     watch: {
       src: {
         files: ['app/styl/*.styl', 'app/scripts/*.coffee', 'vendor/scripts/*.js', 'vendor/styles/*.css'],
@@ -51,8 +60,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
   grunt.registerTask('default', ['stylus','coffee','concat', 'copy']);
+  grunt.registerTask("server", ["connect", "watch"]);
 
 };
